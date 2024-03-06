@@ -64,11 +64,9 @@ for (let i in dentalArray) {
     const consultaDental = document.createElement("p");
     consultaDental.innerHTML = `${dentalArray[i].hora} - ${dentalArray[i].especialista} - ${dentalArray[i].paciente} - ${dentalArray[i].rut} - ${dentalArray[i].prevision}`;
     dentalHtml.appendChild(consultaDental);
-    // Se agrega párrafo para separar filas (codigo obtenido de https://www.w3schools.com/)
-    const para = document.createElement("p");
-    const node = document.createTextNode(" ");
-    para.appendChild(node);
-    dentalHtml.appendChild(para);
+    // Se agrega elemento br para separar filas
+    const newLine = document.createElement("br");
+    dentalHtml.appendChild(newLine);
 };
 
 //4. Imprimir un listado total de todos los pacientes que se atendieron en el centro médico.
