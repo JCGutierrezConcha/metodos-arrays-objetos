@@ -60,14 +60,11 @@ radiologiaArray.pop();
 //3. Imprimir en la página HTML la lista de consultas médicas de Dental, separando por un guión cada dato desplegado y cada fila separada por un párrafo.
 
 const dentalHtml = document.getElementById("dentalhtml");
-for (let i in dentalArray) {
-    const consultaDental = document.createElement("p");
-    consultaDental.innerHTML = `${dentalArray[i].hora} - ${dentalArray[i].especialista} - ${dentalArray[i].paciente} - ${dentalArray[i].rut} - ${dentalArray[i].prevision}`;
-    dentalHtml.appendChild(consultaDental);
-    // Se agrega elemento br para separar filas
-    const newLine = document.createElement("br");
-    dentalHtml.appendChild(newLine);
-};
+dentalHtml.innerHTML = "";
+dentalArray.forEach((item) => {
+    dentalHtml.innerHTML += `<p>${item.hora} - ${item.especialista} - ${item.paciente} - ${item.rut} -${item.prevision}</p><br>`;
+});
+
 
 //4. Imprimir un listado total de todos los pacientes que se atendieron en el centro médico.
 
